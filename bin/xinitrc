@@ -3,31 +3,35 @@
 # Author: Vic Fryzel
 # http://github.com/vicfryzel/xmonad-config
 
-
 # Configure PATH so that we can access our scripts below
 PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 
 # Configure X
+xrandr --output HDMI2 --auto --right-of HDMI1
 xsetroot -cursor_name left_ptr &
 xrdb -merge ~/.Xdefaults &
 xscreensaver -no-splash &
-feh --bg-center ~/wallpapers/city.jpeg &
+feh --bg-center ~/Downloads/362109-1680x1050-silver-ubuntu.jpg
 
 # Automatically mount removable media
-thunar --daemon &
+#thunar --daemon &
 
 # Start the system tray
 tray &
 
+dropbox start &
+
+xcompmgr -Cf
+
 # Start two terminals
-urxvt &
-urxvt &
+#urxvt &
+#urxvt &
 
 # Start two Chromium windows
-chromium &
-chromium &
+#chromium &
+#chromium &
 
 # Start xchat (IRC client)
-xchat &
+#xchat &
 
-exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad
+#exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad
